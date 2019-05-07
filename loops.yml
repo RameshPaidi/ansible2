@@ -1,5 +1,5 @@
 ---
- - hosts: webserver
+ - hosts: all
    become: yes
    tasks:
    - name: Install all sw in single code
