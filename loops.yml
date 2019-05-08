@@ -18,18 +18,18 @@
         state: started
      when: ansible_os_family=="Debian"       
            
-  #  - name: Install all sw in Redhat
-  #    yum:
-  #       name: "{{ item }}"    
-  #       state: present
-  #    with_items:
-  #       - git
-  #       - tree
-  #       - Httpd
-  #    when: ansible_os_family=="RedHat"
-  #  - name: Service status
-  #    service:
-  #     name: httpd
-  #     status: started
-  #    when: ansible_os_family=="RedHat"               
+   - name: Install all sw in Redhat
+     yum:
+        name: "{{ item }}"    
+        state: present
+     with_items:
+        - git
+        - tree
+        - Httpd
+     when: ansible_os_family=="RedHat"
+   - name: Service status
+     service:
+      name: httpd
+      state: started
+     when: ansible_os_family=="RedHat"               
    
