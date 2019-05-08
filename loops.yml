@@ -15,7 +15,7 @@
    - name: Service status
      service:
       name: apache2
-      status: started
+      status: restarted
      when: ansible_os_family=="Debian"       
            
   #  - name: Install all sw in Redhat
