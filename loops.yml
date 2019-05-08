@@ -10,6 +10,6 @@
       - git
       - tree
       - apache2
-     debug:
-       msg: "{{ with_items }}"  
+   - debug:
+       msg: " software name {{ with_items }}"  
        
