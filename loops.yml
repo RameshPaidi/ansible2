@@ -4,11 +4,12 @@
    tasks:
    - name: Install all sw in single code
      apt:
-      name: "{{item}}"    
+      name: "{{ item }}"    
       state: present
      with_items:
       - git
       - tree
       - httpd
-
+     debug:
+       msg: "{{ item }}"  
        
