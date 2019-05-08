@@ -17,7 +17,8 @@
         name: apache2
         state: started
      when: ansible_os_family=="Debian"       
-           
+   - debug: 
+      msg: "{{ item }}"    
    - name: Install all sw in Redhat
      yum:
         name: "{{ item }}"    
@@ -32,4 +33,6 @@
       name: httpd
       state: started
      when: ansible_os_family=="RedHat"               
+   - debug:
+      msg: "{{item}}"   
    
