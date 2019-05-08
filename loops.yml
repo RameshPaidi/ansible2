@@ -11,9 +11,12 @@
       - tree
       - apache2
      when: ansible_os_family=="Debian" 
-   - debug:
-       msg: " software name {{ with_items }}"  
-       
+   - name: Service status
+     service:
+      name: apache2
+      status: started
+     when: ansible_os_family=="Debian"       
+           
    - name: Install all sw in Redhat
      yum:
         name: "{{ item }}"    
@@ -22,6 +25,10 @@
         - git
         - tree
         - Httpd
-     when: ansible_os_family=="RedHat"   
-   - debug:
-        msg: " software name {{ with_items }}"  
+     when: ansible_os_family=="RedHat"
+   - name: Service status
+     service:
+      name: httpd
+      status: started
+     when: ansible_os_family=="RedHat"               
+   
