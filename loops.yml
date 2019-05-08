@@ -10,12 +10,12 @@
       - git
       - tree
       - apache2
-    
+
      when: ansible_os_family=="Debian" 
    - name: Service status
      service:
-      name: apache2
-      status: restarted
+        name: apache2
+        state: started
      when: ansible_os_family=="Debian"       
            
   #  - name: Install all sw in Redhat
