@@ -25,7 +25,7 @@
      with_items:
         - git
         - tree
-        - Httpd
+        - httpd
      when: ansible_os_family=="RedHat"
    - name: Service status
      service:
