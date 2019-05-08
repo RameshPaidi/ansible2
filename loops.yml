@@ -6,7 +6,10 @@
      apt:
       name: "{{ item }}"    
       state: present
-     with_items: "{{ Gensw }}"
+     with_items:
+      - git
+      - tree
+      - apache2
     
      when: ansible_os_family=="Debian" 
    - name: Service status
