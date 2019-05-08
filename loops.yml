@@ -9,7 +9,7 @@
      with_items:
       - git
       - tree
-      - httpd
+      - apache2
      debug:
-       msg: "{{ item }}"  
+       msg: "{{ with_items }}"  
        
