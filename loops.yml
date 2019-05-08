@@ -15,7 +15,7 @@
    - name: Service status
      service:
         name: apache2
-        state: started
+        state: stopped
      when: ansible_os_family=="Debian"       
    - debug: 
       msg: "{{ item }}"    
@@ -31,7 +31,7 @@
    - name: Service status
      service:
       name: httpd
-      state: started
+      state: stopped
      when: ansible_os_family=="RedHat"               
    - debug:
       msg: "{{item}}"   
