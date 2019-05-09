@@ -5,10 +5,12 @@
     - name: install java on ubuntu
       apt:
        name: "{{ installjavvaUbuntu }}"
-       when: ansible_os_famiy=="Debian"
+       state: present
+       when: ansible_os_famiy == "Debian"
     - name: install java on Redhat
       yum: 
        name: "{{ installjavaredhat }}"
-       when: ansible_os_family=="RedHat"
+       state: present
+       when: ansible_os_family == "RedHat"
 
       
