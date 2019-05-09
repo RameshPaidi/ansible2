@@ -6,7 +6,7 @@
       apt:
        name: "{{ installjavvaUbuntu }}"
        state: present
-      when: ansible_os_famiy =="Debian"
+      when: ansible_os_family =="Debian"
     - name: install java on Redhat
       yum: 
        name: "{{ installjavaredhat }}"
