@@ -1,0 +1,6 @@
+key : values
+webserverforubuntu : apache2
+webserverforredhat : httpd
+
+installjavvaUbuntu : openjdk-6-jre
+installjavaredhat : java-1.6.0-openjdk
