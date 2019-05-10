@@ -1,0 +1,21 @@
+---
+ -hosts: webservers
+ become: yes 
+ tasks:
+ - name: display host name
+   command: hostname -f
+   register: myresult
+ - debug:
+    msg: "{{myresult}}" 
+
+ - name: install git on redhat
+   yum: 
+    name: git
+    state: present
+   when: myresult.stderr== ""
+ - name: install tree on redhat
+   yum:
+    name: tree 
+    state: present
+   when: myresult.stderr != ""
+
