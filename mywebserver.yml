@@ -3,7 +3,7 @@
    become: yes
    tasks:
 
- - include_tasks: "{{myfile.yml}}"
+ - include_tasks: myfile.yml
 
  - name: Install webserver on redhat
    yum:
