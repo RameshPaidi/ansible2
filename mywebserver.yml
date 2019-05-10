@@ -15,6 +15,6 @@
       state: started 
    - name: copy index file into webserver     
      template:
-      src: index.j2
-      dest: /var/www/html/index.html
+       src: index.j2
+       dest: /var/www/html/index.html
          
