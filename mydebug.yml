@@ -2,9 +2,10 @@
  - hosts: webservers
    become: yes 
    tasks:
-   - name: display host name
+   - name: display hostname
      command: hostname -f
      register: myresult
+   - name: display the myresult  
      debug:
        msg: "{{myresult}}" 
 
