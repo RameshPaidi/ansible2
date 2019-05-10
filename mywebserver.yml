@@ -2,19 +2,18 @@
  - hosts: webservers
    become: yes
    tasks:
+   - include_tasks: myfile.yml
 
- - include_tasks: myfile.yml
+   - name: Install webserver on redhat
+     yum:
+      name: httpd
+      state: present
 
- - name: Install webserver on redhat
-   yum:
-    name: httpd
-    state: present
-
- - name: service status
-   service:
-    name: httpd
-    state: started 
-   template:
-   src: index.j2
-   dest: /var/www/html/index.html
-      
+   - name: service status
+     service:
+      name: httpd
+      state: started 
+      template:
+      src: index.j2
+      dest: /var/www/html/index.html
+         
