@@ -13,7 +13,7 @@
      service:
       name: httpd
       state: started 
-      template:
+   template:
       src: index.j2
       dest: /var/www/html/index.html
          
