@@ -1,2 +1,28 @@
 ---
-# tasks file for mytomcatrole
+ - name: tomcat install
+   yum:
+    name: tomcat
+    state: present
+ - name: copy the tomcat file 
+   template: 
+     src: /template/tomcpnfig.j2
+     dest: /usr/share/tomcat/conf/tomcat.conf
+ - name:      Install Admin Packages
+   yum:
+    name: "{{ item }}"
+    state: present
+    with_items:
+      -  tomcat-webapps
+      - tomcat-admin-webapps
+ - name:     Configure Tomcat Web Management Interface
+   template:
+    src: /template/tomuser.j2
+    dest:    /usr/share/tomcat/conf/tomcat-users.xml
+   notify: StartTomcat
+
+ - name: Take the remote url
+   get_url:
+    url: http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+    dest: /usr/share/tomcat/webapps/
+    force_basic_auth: yes
+   notify: RestartTomcat 
