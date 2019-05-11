@@ -5,7 +5,7 @@
     state: present
  - name: copy the tomcat file 
    template: 
-     src: /template/tomconfig.j2
+     src: template/tomconfig.j2
      dest: /usr/share/tomcat/conf/tomcat.conf
  - name:      Install Admin Packages
    yum:
@@ -16,7 +16,7 @@
       - tomcat-admin-webapps
  - name:     Configure Tomcat Web Management Interface
    template:
-    src: /template/tomuser.j2
+    src: template/tomuser.j2
     dest:    /usr/share/tomcat/conf/tomcat-users.xml
    notify: StartTomcat
 
