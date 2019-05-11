@@ -7,12 +7,12 @@
    template: 
      src: template/tomconfig.j2
      dest: /usr/share/tomcat/conf/tomcat.conf
- - name:      Install Admin Packages
+ - name: Install Admin Packages
    yum:
-    name: "{{ item }}"
+    name: "{{item}}"
     state: present
-    with_items:
-      -  tomcat-webapps
+   with_items:
+      - tomcat-webapps
       - tomcat-admin-webapps
  - name:     Configure Tomcat Web Management Interface
    template:
